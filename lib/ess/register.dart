@@ -134,7 +134,7 @@ class _RegisterState extends State<Register> {
                   const SizedBox(height: 10),
 
                    TextFormField(
-                    controller: _passwordController,
+                    controller: _emailController,
                     decoration: const InputDecoration(
                       labelText: 'Email',
                       prefixIcon: Icon(Icons.email_outlined),
