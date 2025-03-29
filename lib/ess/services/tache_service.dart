@@ -49,7 +49,46 @@ class TacheService {
     return const Stream.empty();
   }
 
-  updateTacheStatus(String id, bool bool) {}
 
-  deleteTache(String id) {}
+  // Update task status
+  Future<void> updateTacheStatus(String id, bool status) async {
+    final user = _auth.currentUser;
+    if (user == null) {
+      throw Exception("Utilisateur non connecté");
+    }
+
+    try {
+      await _firestore
+          .collection('taches')
+          .doc(user.uid)
+          .collection('userTasks')
+          .doc(id)
+          .update({'status': status});
+      print("Statut de la tâche mis à jour avec succès : $id");
+    } catch (e) {
+      print("Erreur lors de la mise à jour du statut : $e");
+      throw Exception("Erreur de mise à jour : $e");
+    }
+  }
+
+  // Delete task
+  Future<void> deleteTache(String taskId) async {
+    final user = _auth.currentUser;
+    if (user == null) {
+      throw Exception("Utilisateur non connecté");
+    }
+
+    try {
+      await _firestore
+          .collection('taches')
+          .doc(user.uid)
+          .collection('userTasks')
+          .doc(taskId)
+          .delete();
+      print("Tâche supprimée avec succès : $taskId");
+    } catch (e) {
+      print("Erreur lors de la suppression : $e");
+      throw Exception("Erreur de suppression : $e");
+    }
+  }
 }
