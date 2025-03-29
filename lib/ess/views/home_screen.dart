@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 10,
         items: const [
           // BottomNavigationBarItem(icon: Icon(Icons.task), label: 'Accueil'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_task), label: 'Tâches'),
+          BottomNavigationBarItem(icon: Icon(Icons.task), label: 'Tâches'),
           BottomNavigationBarItem(icon: Icon(Icons.person_2_sharp), label: 'Profil'),
         ],
       ),

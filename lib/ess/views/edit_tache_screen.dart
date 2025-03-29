@@ -14,6 +14,11 @@ class EditTacheScreen extends StatefulWidget {
 class _EditTacheScreenState extends State<EditTacheScreen> {
   final _titleController = TextEditingController();
   final _contentController = TextEditingController();
+  // final _formKey = GlobalKey<FormState>();
+  DateTime selectedTaskDate = DateTime.now();
+  String? selectedTaskPriority ;
+  // final _dateController = TextEditingController();
+
   final TacheService _tacheService = TacheService();
 
   @override

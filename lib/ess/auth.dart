@@ -63,7 +63,7 @@ class _AuthState extends State<Auth> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Connexion")),
+      // appBar: AppBar(title: const Text("Connexion")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

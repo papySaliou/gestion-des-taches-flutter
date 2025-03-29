@@ -91,7 +91,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Inscription")),
+      // appBar: AppBar(title: const Text("Inscription")),
 
       body: SafeArea(
         child: SingleChildScrollView(
@@ -139,7 +139,7 @@ class _RegisterState extends State<Register> {
                       labelText: 'Email',
                       prefixIcon: Icon(Icons.email_outlined),
                     ),
-                    obscureText: true,
+                    // obscureText: true,
                     validator: _validateEmail,
                   ),
                   
