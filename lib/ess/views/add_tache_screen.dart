@@ -160,39 +160,7 @@ class _AddTacheScreenState extends State<AddTacheScreen> {
                   readOnly: true, // Empêche l'utilisateur de saisir la date manuellement
                 ),
               ),
-              // SizedBox(
-              //   width: double.infinity,
-              //   height: 50,
-              //   child: ElevatedButton(
-              //     style: ElevatedButton.styleFrom(
-              //       backgroundColor: Colors.green,
-              //       foregroundColor: Colors.white,
-              //       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-              //       shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(10),
-              //       ),
-              //     ),
-              //     onPressed: () {
-              //       if (_formKey.currentState!.validate()) {
-              //         ScaffoldMessenger.of(context).showSnackBar(
-              //           const SnackBar(content: Text("Envoi en cours...")),
-              //         );
-              //         _addTache(); // Fonction pour ajouter la tâche
-              //       }
-              //     },
-              //     child: const Text(
-              //       "VALIDER",
-              //       style: TextStyle(
-              //         fontSize: 20,
-              //         fontWeight: FontWeight.bold,
-              //         fontStyle: FontStyle.italic,
-              //         color: Colors.white,
-              //         letterSpacing: 2,
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              MyButton(
+             MyButton(
   onTap: () {
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(

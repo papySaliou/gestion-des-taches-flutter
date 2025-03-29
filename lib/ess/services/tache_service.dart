@@ -22,18 +22,23 @@ class TacheService {
     }
   }
 
+
+
   Future<void> updateTache(Tache tache) async {
+  final user = _auth.currentUser;
+  if (user != null) {
     try {
       await _firestore
           .collection('taches')
-          .doc(tache.uid) // Use the user's UID
+          .doc(user.uid) // Répertoire de l'utilisateur
           .collection('userTasks')
-          .doc(tache.id) // Use the task's ID
-          .update(tache.toMap()); // Update the task with the new data
+          .doc(tache.id) // ID de la tâche
+          .update(tache.toMap()); // Met à jour la tâche
     } catch (e) {
-      throw Exception('Failed to update task: $e');
+      throw Exception('Échec de la mise à jour de la tâche');
     }
   }
+}
   // Récupérer les tâches de l'utilisateur
   Stream<List<Tache>> getTache() {
     final user = _auth.currentUser;
